@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "UTF-8">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link rel = "stylesheet" type = "text/css" href = "main.css">
+  </head>
+  <body ng-app = "AutoApp">
+
+    <md-content class = "lssContent">
+
+      <md-card id = "titleCard">
+        <h1 class = "md-display-2">Auto Search</h1>
+      </md-card>
+
+      <div ng-controller = "mainCtrl">
+
+        <div>
+          <md-input-container>
+            <input ng-model = "searchText" type = "text" placeholder = "Enter live search terms"></input>
+          </md-input-container>
+        </div>
+
+        <div>
+          <md-select ng-model = "selectedMake" placeholder = "Search by car Make">
+            <md-option ng-repeat = "make in makes">{{make.name}}</md-option>
+          </md-select>
+        </div>
+
+        <div ng-repeat = "car in cars | filter:searchText" layout = "row" class = "lssDiv">
+          <md-card>
+            <a href = "#"><img ng-src = "{{car.ImageUrl}}">
+            {{car.ShortDescription}}</a>
+          </md-card>
+        </div>
+
+        <md-dialog-content>
+          <img ng-src = "{{car.ImageUrl}}">
+          
+        </md-dialog-content>
+
+      </div>
+
+    </md-content>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src = "app.js"></script>
+  </body>
+</html>

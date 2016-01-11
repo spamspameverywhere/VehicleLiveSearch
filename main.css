@@ -1,0 +1,26 @@
+/**********
+http://paletton.com/#uid=12m0u0kmjtv7ZSWgiD0rAnwz3ed
+**********/
+
+body {
+  text-align: center;
+}
+
+#titleCard {
+  background-color: #7DAF18;
+  color: #FFF;
+}
+
+.lssDiv {
+  display: inline-block;
+  width: 45%;
+  max-height: 50%;
+}
+
+img, a {
+  padding: 10px;
+}
+
+.lssContent {
+  background-color: #E6FBBC;
+}
